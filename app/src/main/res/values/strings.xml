@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Your vision</string>
     <string name="user_name_hint">@user_name</string>
-    <string name="user_password_hint">@password</string>
+    <string name="password_hint">@password</string>
+    <string name="email_hint">@email</string>
+    <string name="confirm_password_hint">@confirm_passwor</string>
     <string name="application_logo_description">Application logo</string>
 </resources>

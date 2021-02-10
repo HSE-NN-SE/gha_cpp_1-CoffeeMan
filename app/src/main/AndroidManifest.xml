@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.YourVision">
-        <activity android:name=".UI.entrance.Authorization"
+        <activity
+            android:name=".ui.entrance.Register"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".ui.entrance.Authorization"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

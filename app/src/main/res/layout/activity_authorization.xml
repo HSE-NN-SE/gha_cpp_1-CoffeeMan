@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ui.entrance.Authorization">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,7 +30,7 @@
             android:background="@drawable/bg_input_field"
             android:layout_marginBottom="19dp">
             <EditText
-                android:id="@+id/editTextUserName"
+                android:id="@+id/edit_text_user_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="255"
@@ -46,11 +49,11 @@
             android:background="@drawable/bg_input_field"
             android:layout_marginBottom="19dp">
             <EditText
-                android:id="@+id/editTextPassword"
+                android:id="@+id/edit_text_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="255"
-                android:hint="@string/user_password_hint"
+                android:hint="@string/password_hint"
                 android:inputType="textPassword"
                 android:autofillHints=""
                 android:background="#00000000"
@@ -61,21 +64,119 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <Button
+                android:id="@+id/reset_btn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginRight="5dp"
-                android:background="@drawable/bg_reset_password_btn"
-                android:text="Reset password"/>
+                android:layout_weight="1"
+                android:text="Reset password"
+                android:textColor="#2D81FE"
+                app:backgroundTint="#B9D5EE"
+                app:cornerRadius="29dp" />
+
             <Button
+                android:id="@+id/sing_in_btn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginLeft="5dp"
-                android:background="@drawable/bg_sing_in_btn"
-                android:text="Sing in"/>
+                android:layout_weight="1"
+                android:text="Sing in"
+                android:textColor="#000000"
+                app:backgroundTint="#C4C4C4"
+                app:cornerRadius="29dp" />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="#000000"
+                android:layout_gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="or"
+                android:textSize="24dp"
+                android:layout_margin="6dp"/>
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="#000000"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="22dp"
+            android:gravity="center"
+            android:weightSum="3">
+
+            <Button
+                android:id="@+id/google_authorization_btn"
+                android:layout_width="37dp"
+                android:layout_height="wrap_content"
+                app:backgroundTint="#C4C4C4"
+                app:cornerRadius="29dp"
+                app:icon="@drawable/ic_google"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconTint="#000000"/>
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/vk_authorization_btn"
+                android:layout_width="37dp"
+                android:layout_height="wrap_content"
+                app:backgroundTint="#C4C4C4"
+                app:cornerRadius="29dp"
+                app:icon="@drawable/ic_vk"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconTint="#000000" />
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/instagram_authorization_btn"
+                android:layout_width="37dp"
+                android:layout_height="wrap_content"
+                app:backgroundTint="#C4C4C4"
+                app:cornerRadius="29dp"
+                app:icon="@drawable/ic_instagram"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconTint="#000000" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/register_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="28dp"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="62dp"
+            app:cornerRadius="29dp"
+            android:text="Register"
+            android:textSize="18dp"
+            android:textColor="#000000"
+            app:backgroundTint="#C4C4C4"/>
 
     </LinearLayout>
 
