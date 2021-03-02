@@ -3,6 +3,15 @@
     <string name="user_name_hint">@user_name</string>
     <string name="password_hint">@password</string>
     <string name="email_hint">@email</string>
-    <string name="confirm_password_hint">@confirm_passwor</string>
+    <string name="confirm_password_hint">@confirm_password</string>
     <string name="application_logo_description">Application logo</string>
+    <string name="registration_title">Registration</string>
+    <string name="register_btn_str">Register</string>
+    <string name="sing_in_btn_str">Log in</string>
+    <string name="reset_password_btn_str">Reset password</string>
+    <string name="change_password_title">Change Password</string>
+    <string name="code_from_email_hint">@code_from_email</string>
+    <string name="send_btn_str">Send code</string>
+    <string name="resend_btn_str">Resend code</string>
+    <string name="confirm_btn_str">Confirm</string>
 </resources>
