@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.entrance.Authorization">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingVertical="30dp"
+        android:paddingHorizontal="20dp"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_launcher"
+            android:contentDescription="@string/application_logo_description"
+            android:layout_marginBottom="40dp"/>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="8dp"
+            android:background="@drawable/bg_input_field"
+            android:layout_marginBottom="19dp">
+            <EditText
+                android:id="@+id/edit_text_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="255"
+                android:hint="@string/user_name_hint"
+                android:inputType="textPersonName"
+                android:autofillHints=""
+                android:background="#00000000"
+                android:layout_gravity="center"/>
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="8dp"
+            android:background="@drawable/bg_input_field"
+            android:layout_marginBottom="19dp">
+            <EditText
+                android:id="@+id/edit_text_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="255"
+                android:hint="@string/password_hint"
+                android:inputType="textPassword"
+                android:autofillHints=""
+                android:background="#00000000"
+                android:layout_gravity="center"/>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/reset_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:text="@string/reset_password_btn_str"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textColor="#2D81FE"
+                app:backgroundTint="#B9D5EE"
+                app:cornerRadius="29dp" />
+
+            <Button
+                android:id="@+id/log_in_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:text="@string/sing_in_btn_str"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                app:backgroundTint="#C4C4C4"
+                app:cornerRadius="29dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="#000000"
+                android:layout_gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="or"
+                android:textSize="24sp"
+                android:layout_margin="6dp"/>
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="#000000"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="22dp"
+            android:gravity="center"
+            android:weightSum="3">
+
+            <Button
+                android:id="@+id/google_authorization_btn"
+                android:layout_width="37dp"
+                android:layout_height="wrap_content"
+                app:backgroundTint="#C4C4C4"
+                app:cornerRadius="29dp"
+                app:icon="@drawable/ic_google"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconTint="#000000"/>
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/vk_authorization_btn"
+                android:layout_width="37dp"
+                android:layout_height="wrap_content"
+                app:backgroundTint="#C4C4C4"
+                app:cornerRadius="29dp"
+                app:icon="@drawable/ic_vk"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconTint="#000000" />
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/inst_authorization_btn"
+                android:layout_width="37dp"
+                android:layout_height="wrap_content"
+                app:backgroundTint="#C4C4C4"
+                app:cornerRadius="29dp"
+                app:icon="@drawable/ic_instagram"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconTint="#000000" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/register_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="28dp"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="62dp"
+            app:cornerRadius="29dp"
+            android:text="@string/register_btn_str"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            app:backgroundTint="#C4C4C4"/>
+
+    </LinearLayout>
+
+</FrameLayout>
