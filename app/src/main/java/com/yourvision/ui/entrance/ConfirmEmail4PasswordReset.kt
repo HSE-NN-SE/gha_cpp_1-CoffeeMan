@@ -3,23 +3,18 @@ package com.yourvision.ui.entrance
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.view.ViewGroup
 import android.view.WindowManager
-import android.view.animation.Animation
-import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import com.yourvision.R
 import com.yourvision.ui.utilities.ScaleAnimator
-import com.yourvision.ui.utilities.Timer
+import com.yourvision.ui.utilities.ViewTimer
 
 class ConfirmEmail4PasswordReset : AppCompatActivity() {
     private var isResend = false
     private var isReset = false
-    private val timer = Timer()
+    private val timer = ViewTimer()
     private val animator = ScaleAnimator()
 
     private val emailField by lazy {
@@ -73,7 +68,7 @@ class ConfirmEmail4PasswordReset : AppCompatActivity() {
                 confirmBtn,
                 button?.width ?: 0,
                 button?.height ?: 0,
-                step = 75
+                speed = 0.15
             ) {
                 confirmBtn.setText(R.string.confirm_btn_str)
                 confirmBtn.isClickable = true
