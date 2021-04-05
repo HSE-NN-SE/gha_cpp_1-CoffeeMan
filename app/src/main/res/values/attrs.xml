@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ViewStyle">
+        <attr name="reset_pwd_text" format="color" />
+        <attr name="reset_pwd_bg" format="color" />
+        <attr name="input_field_stroke" format="color|reference" />
+        <attr name="input_field_bg" format="color|reference" />
+        <attr name="screen_title_text" format="color" />
+    </declare-styleable>
+</resources>

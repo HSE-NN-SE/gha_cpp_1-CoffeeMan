@@ -1,11 +1,11 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="319dp"
+    android:width="200dp"
     android:height="37dp"
     android:viewportWidth="319"
     android:viewportHeight="37">
   <path
       android:strokeWidth="1"
       android:pathData="M14,0.5L305,0.5A13.5,13.5 0,0 1,318.5 14L318.5,23A13.5,13.5 0,0 1,305 36.5L14,36.5A13.5,13.5 0,0 1,0.5 23L0.5,14A13.5,13.5 0,0 1,14 0.5z"
-      android:fillColor="#ffffff"
-      android:strokeColor="#000000"/>
+      android:fillColor="?attr/input_field_bg"
+      android:strokeColor="?attr/input_field_stroke" />
 </vector>
