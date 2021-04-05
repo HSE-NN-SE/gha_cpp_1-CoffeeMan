@@ -12,85 +12,53 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center"
+        android:gravity="center"
         android:paddingHorizontal="41dp">
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:paddingVertical="19dp"
-            android:text="@string/registration_title"
-            android:textColor="#000000"
-            android:textSize="36sp"/>
+            style="@style/ScreenTitle"
+            android:text="@string/registration_title"/>
         <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="8dp"
-            android:background="@drawable/bg_input_field"
+            style="@style/InputField.FrameLayout"
             android:layout_marginBottom="19dp">
             <EditText
                 android:id="@+id/edit_text_user_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="255"
                 android:hint="@string/user_name_hint"
-                android:inputType="textPersonName"
-                android:autofillHints=""
-                android:background="#00000000"
-                android:layout_gravity="center"/>
+                android:inputType="textEmailAddress"
+                android:autofillHints="username"
+                style="@style/InputField"/>
         </FrameLayout>
 
         <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="8dp"
-            android:background="@drawable/bg_input_field"
+            style="@style/InputField.FrameLayout"
             android:layout_marginBottom="19dp">
             <EditText
                 android:id="@+id/edit_text_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="255"
                 android:hint="@string/email_hint"
                 android:inputType="textEmailAddress"
-                android:autofillHints=""
-                android:background="#00000000"
-                android:layout_gravity="center"/>
+                android:autofillHints="email"
+                style="@style/InputField"/>
         </FrameLayout>
 
         <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="8dp"
-            android:background="@drawable/bg_input_field"
+            style="@style/InputField.FrameLayout"
             android:layout_marginBottom="19dp">
             <EditText
                 android:id="@+id/edit_text_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="255"
                 android:hint="@string/password_hint"
                 android:inputType="textPassword"
-                android:autofillHints=""
-                android:background="#00000000"
-                android:layout_gravity="center"/>
+                android:autofillHints="password"
+                style="@style/InputField"/>
         </FrameLayout>
 
         <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="8dp"
-            android:background="@drawable/bg_input_field"
+            style="@style/InputField.FrameLayout"
             android:layout_marginBottom="19dp">
             <EditText
                 android:id="@+id/edit_text_confirm_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="255"
                 android:hint="@string/confirm_password_hint"
                 android:inputType="textPassword"
-                android:autofillHints=""
-                android:background="#00000000"
-                android:layout_gravity="center"/>
+                android:autofillHints="password"
+                style="@style/InputField"/>
         </FrameLayout>
 
         <LinearLayout
@@ -105,11 +73,7 @@
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:text="@string/register_btn_str"
-                android:textSize="18sp"
-                android:textAllCaps="false"
-                android:textColor="#000000"
-                app:backgroundTint="#C4C4C4"
-                app:cornerRadius="29dp" />
+                style="@style/CorneredButton"/>
             <Button
                 android:id="@+id/log_in_btn"
                 android:layout_width="0dp"
@@ -117,11 +81,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_weight="1"
                 android:text="@string/sing_in_btn_str"
-                android:textSize="18sp"
-                android:textAllCaps="false"
-                android:textColor="#000000"
-                app:backgroundTint="#C4C4C4"
-                app:cornerRadius="29dp" />
+                style="@style/CorneredButton" />
         </LinearLayout>
 
     </LinearLayout>

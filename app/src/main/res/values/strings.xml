@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Your vision</string>
+    <string name="app_name">Your Vision</string>
     <string name="user_name_hint">@user_name</string>
     <string name="password_hint">@password</string>
     <string name="email_hint">@email</string>
@@ -14,4 +14,5 @@
     <string name="send_btn_str">Send code</string>
     <string name="resend_btn_str">Resend code</string>
     <string name="confirm_btn_str">Confirm</string>
+    <string name="or">or</string>
 </resources>

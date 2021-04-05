@@ -5,7 +5,7 @@ import android.view.View
 import android.widget.TextView
 import java.util.concurrent.Future
 
-class Timer {
+class ViewTimer {
     private var time = 0
     private var view: View? = null
     private var currentTime = 0

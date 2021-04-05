@@ -24,40 +24,25 @@
             android:layout_marginBottom="40dp" />
 
         <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="8dp"
-            android:background="@drawable/bg_input_field"
+            style="@style/InputField.FrameLayout"
             android:layout_marginBottom="19dp">
             <EditText
                 android:id="@+id/edit_text_user_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="255"
                 android:hint="@string/user_name_hint"
-                android:inputType="textPersonName"
-                android:autofillHints=""
-                android:background="#00000000"
-                android:layout_gravity="center"/>
+                android:inputType="textEmailAddress"
+                android:autofillHints="email"
+                style="@style/InputField"/>
         </FrameLayout>
 
-
         <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="8dp"
-            android:background="@drawable/bg_input_field"
+            style="@style/InputField.FrameLayout"
             android:layout_marginBottom="19dp">
             <EditText
                 android:id="@+id/edit_text_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="255"
                 android:hint="@string/password_hint"
                 android:inputType="textPassword"
-                android:autofillHints=""
-                android:background="#00000000"
-                android:layout_gravity="center"/>
+                android:autofillHints="password"
+                style="@style/InputField"/>
         </FrameLayout>
 
         <LinearLayout
@@ -72,11 +57,10 @@
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:text="@string/reset_password_btn_str"
-                android:textAllCaps="false"
+                style="@style/CorneredButton"
                 android:textSize="16sp"
-                android:textColor="#2D81FE"
-                app:backgroundTint="#B9D5EE"
-                app:cornerRadius="29dp" />
+                android:textColor="?attr/reset_pwd_text"
+                app:backgroundTint="?attr/reset_pwd_bg" />
 
             <Button
                 android:id="@+id/log_in_btn"
@@ -85,11 +69,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_weight="1"
                 android:text="@string/sing_in_btn_str"
-                android:textAllCaps="false"
-                android:textSize="18sp"
-                android:textColor="#000000"
-                app:backgroundTint="#C4C4C4"
-                app:cornerRadius="29dp" />
+                style="@style/CorneredButton"/>
         </LinearLayout>
 
         <LinearLayout
@@ -100,21 +80,21 @@
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:layout_weight="1"
-                android:background="#000000"
+                android:background="?attr/colorSecondary"
                 android:layout_gravity="center"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="or"
+                android:text="@string/or"
                 android:textSize="24sp"
                 android:layout_margin="6dp"/>
             <FrameLayout
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:layout_weight="1"
-                android:background="#000000"
+                android:background="?attr/colorSecondary"
                 android:layout_gravity="center"/>
         </LinearLayout>
         <LinearLayout
@@ -176,13 +156,8 @@
             android:layout_marginTop="28dp"
             android:paddingVertical="10dp"
             android:paddingHorizontal="62dp"
-            app:cornerRadius="29dp"
             android:text="@string/register_btn_str"
-            android:textAllCaps="false"
-            android:textSize="18sp"
-            android:textColor="#000000"
-            app:backgroundTint="#C4C4C4"/>
-
+            style="@style/CorneredButton"/>
     </LinearLayout>
 
 </FrameLayout>

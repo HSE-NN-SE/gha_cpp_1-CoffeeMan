@@ -7,4 +7,44 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!--DAY COLORS-->
+
+    <color name="appBackground">@color/white</color>
+
+    <color name="colorPrimary">#C4C4C4</color>
+    <color name="colorPrimaryVariant">@color/purple_700</color>
+    <color name="colorOnPrimary">@color/black</color>
+
+    <color name="colorSecondary">@color/black</color>
+    <color name="colorSecondaryVariant">@color/white</color>
+    <color name="colorOnSecondary">@color/black</color>
+
+    <color name="screen_title_text">@color/black</color>
+
+    <color name="reset_pwd_bg">#B9D5EE</color>
+    <color name="reset_pwd_text">#2D81FE</color>
+
+    <color name="input_field_stroke">#000000</color>
+    <color name="input_field_bg">#FFFFFF</color>
+
+    <!--NIGHT COLORS-->
+
+    <color name="appBackgroundNight">#131313</color>
+
+    <color name="colorPrimaryNight">#6E6E6E</color>
+    <color name="colorPrimaryVariantNight">@color/purple_700</color>
+    <color name="colorOnPrimaryNight">@color/black</color>
+
+    <color name="colorSecondaryNight">#B5B4B4</color>
+    <color name="colorSecondaryVariantNight">@color/white</color>
+    <color name="colorOnSecondaryNight">@color/black</color>
+
+    <color name="reset_pwd_bg_night">#B9D5EE</color>
+    <color name="reset_pwd_text_night">#2D81FE</color>
+
+    <color name="input_field_stroke_night">#919191</color>
+    <color name="input_field_bg_night">#000000</color>
+
+    <color name="screen_title_text_night">@color/white</color>
 </resources>
