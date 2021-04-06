@@ -68,7 +68,8 @@ class ConfirmEmail4PasswordReset : AppCompatActivity() {
                 confirmBtn,
                 button?.width ?: 0,
                 button?.height ?: 0,
-                speed = 0.15
+                speed = 0.15,
+                delay = 100
             ) {
                 confirmBtn.setText(R.string.confirm_btn_str)
                 confirmBtn.isClickable = true
@@ -89,5 +90,10 @@ class ConfirmEmail4PasswordReset : AppCompatActivity() {
         timer.stop()
         val intent = Intent(this, ResetPassword::class.java)
         startActivity(intent)
+    }
+
+    override fun onBackPressed() {
+        //todo open Authorization activity
+        super.onBackPressed()
     }
 }

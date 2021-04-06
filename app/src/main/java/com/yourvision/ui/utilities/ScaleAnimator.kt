@@ -18,7 +18,7 @@ class ScaleAnimator {
         this.heightTo = heightTo
     }
 
-    private fun start(speed: Double, onStop: () -> Unit = {}) {
+    private fun start(delay: Long, speed: Double, onStop: () -> Unit = {}) {
         isStopped = false
 
         var params = view?.layoutParams
@@ -54,17 +54,18 @@ class ScaleAnimator {
                 }
             }
         }
-        handler.post(anim)
+        handler.postDelayed(anim, delay)
     }
 
     fun initAndStart(view: View?,
                      widthTo: Int,
                      heightTo: Int,
                      speed: Double,
+                     delay: Long = 0,
                      onStop: () -> Unit = {}) {
         if (speed > 0) {
             init(view, widthTo, heightTo)
-            start(speed, onStop)
+            start(delay, speed, onStop)
         }
     }
 

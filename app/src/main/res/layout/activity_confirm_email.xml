@@ -6,60 +6,68 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.entrance.ConfirmEmail4PasswordReset">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_gravity="center"
+        android:layout_margin="22dp"
+        android:background="#00FFFFFF"
         android:gravity="center"
-        android:layout_margin="22dp">
+        android:orientation="vertical">
+
         <TextView
             style="@style/ScreenTitle"
-            android:text="@string/change_password_title"/>
+            android:background="#00FFFFFF"
+            android:text="@string/change_password_title" />
+
         <FrameLayout
             style="@style/InputField.FrameLayout"
             android:layout_marginBottom="19dp">
+
             <EditText
                 android:id="@+id/edit_text_email"
-                android:hint="@string/email_hint"
-                android:inputType="textEmailAddress"
+                style="@style/InputField"
                 android:autofillHints="email"
-                style="@style/InputField"/>
+                android:hint="@string/email_hint"
+                android:inputType="textEmailAddress" />
         </FrameLayout>
 
         <FrameLayout
             style="@style/InputField.FrameLayout"
             android:layout_marginBottom="19dp">
+
             <EditText
                 android:id="@+id/edit_text_code"
-                android:hint="@string/code_from_email_hint"
+                style="@style/InputField"
                 android:autofillHints="code"
-                android:inputType="textVisiblePassword"
-                style="@style/InputField" />
+                android:hint="@string/code_from_email_hint"
+                android:inputType="textVisiblePassword" />
         </FrameLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
+            android:background="#00FFFFFF"
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/send_btn"
+                style="@style/CorneredButton"
                 android:layout_width="155dp"
                 android:layout_height="match_parent"
                 android:layout_marginRight="5dp"
-                android:text="@string/send_btn_str"
-                style="@style/CorneredButton"/>
+                android:text="@string/send_btn_str" />
 
             <Button
                 android:id="@+id/confirm_btn"
+                style="@style/CorneredButton"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:visibility="invisible"
                 android:clickable="false"
                 android:text=""
-                style="@style/CorneredButton"/>
+                android:visibility="invisible" />
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>

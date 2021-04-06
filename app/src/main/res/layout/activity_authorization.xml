@@ -10,154 +10,148 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#00FFFFFF"
         android:orientation="vertical"
-        android:paddingVertical="30dp"
         android:paddingHorizontal="20dp"
-        android:layout_gravity="center">
+        android:paddingVertical="30dp">
 
         <ImageView
             android:layout_width="182dp"
             android:layout_height="182dp"
             android:layout_gravity="center"
+            android:layout_marginBottom="40dp"
             android:background="@drawable/ic_launcher"
-            android:contentDescription="@string/application_logo_description"
-            android:layout_marginBottom="40dp" />
+            android:contentDescription="@string/application_logo_description" />
 
         <FrameLayout
             style="@style/InputField.FrameLayout"
             android:layout_marginBottom="19dp">
+
             <EditText
                 android:id="@+id/edit_text_user_name"
-                android:hint="@string/user_name_hint"
-                android:inputType="textEmailAddress"
+                style="@style/InputField"
                 android:autofillHints="email"
-                style="@style/InputField"/>
+                android:hint="@string/user_name_hint"
+                android:inputType="textEmailAddress" />
         </FrameLayout>
 
         <FrameLayout
             style="@style/InputField.FrameLayout"
             android:layout_marginBottom="19dp">
+
             <EditText
                 android:id="@+id/edit_text_password"
-                android:hint="@string/password_hint"
-                android:inputType="textPassword"
+                style="@style/InputField"
                 android:autofillHints="password"
-                style="@style/InputField"/>
+                android:hint="@string/password_hint"
+                android:inputType="textPassword" />
         </FrameLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/reset_btn"
+                style="@style/CorneredButton"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:text="@string/reset_password_btn_str"
-                style="@style/CorneredButton"
-                android:textSize="16sp"
-                android:textColor="?attr/reset_pwd_text"
-                app:backgroundTint="?attr/reset_pwd_bg" />
+                android:textSize="16sp" />
 
             <Button
                 android:id="@+id/log_in_btn"
+                style="@style/CorneredButton"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="1"
-                android:text="@string/sing_in_btn_str"
-                style="@style/CorneredButton"/>
+                android:text="@string/sing_in_btn_str" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
             android:orientation="horizontal">
+
             <FrameLayout
                 android:layout_width="0dp"
                 android:layout_height="1dp"
+                android:layout_gravity="center"
                 android:layout_weight="1"
-                android:background="?attr/colorSecondary"
-                android:layout_gravity="center"/>
+                android:background="?attr/colorSecondary" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_margin="6dp"
+                android:background="#00FFFFFF"
                 android:gravity="center"
                 android:text="@string/or"
-                android:textSize="24sp"
-                android:layout_margin="6dp"/>
+                android:textColor="?attr/colorSecondary"
+                android:textSize="24sp" />
+
             <FrameLayout
                 android:layout_width="0dp"
                 android:layout_height="1dp"
+                android:layout_gravity="center"
                 android:layout_weight="1"
-                android:background="?attr/colorSecondary"
-                android:layout_gravity="center"/>
+                android:background="?attr/colorSecondary" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:gravity="center"
             android:orientation="horizontal"
             android:padding="22dp"
-            android:gravity="center"
             android:weightSum="3">
 
             <Button
                 android:id="@+id/google_authorization_btn"
-                android:layout_width="37dp"
-                android:layout_height="wrap_content"
-                app:backgroundTint="#C4C4C4"
-                app:cornerRadius="29dp"
-                app:icon="@drawable/ic_google"
-                app:iconGravity="textStart"
-                app:iconPadding="0dp"
-                app:iconTint="#000000"/>
+                style="@style/SNAuthButton"
+                app:icon="@drawable/ic_google" />
+
             <Space
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
             <Button
                 android:id="@+id/vk_authorization_btn"
-                android:layout_width="37dp"
-                android:layout_height="wrap_content"
-                app:backgroundTint="#C4C4C4"
-                app:cornerRadius="29dp"
-                app:icon="@drawable/ic_vk"
-                app:iconGravity="textStart"
-                app:iconPadding="0dp"
-                app:iconTint="#000000" />
+                style="@style/SNAuthButton"
+                app:icon="@drawable/ic_vk" />
+
             <Space
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
             <Button
                 android:id="@+id/inst_authorization_btn"
-                android:layout_width="37dp"
-                android:layout_height="wrap_content"
-                app:backgroundTint="#C4C4C4"
-                app:cornerRadius="29dp"
-                app:icon="@drawable/ic_instagram"
-                app:iconGravity="textStart"
-                app:iconPadding="0dp"
-                app:iconTint="#000000" />
+                style="@style/SNAuthButton"
+                app:icon="@drawable/ic_instagram" />
         </LinearLayout>
 
         <Button
             android:id="@+id/register_btn"
+            style="@style/CorneredButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:gravity="center"
             android:layout_marginTop="28dp"
-            android:paddingVertical="10dp"
+            android:gravity="center"
             android:paddingHorizontal="62dp"
-            android:text="@string/register_btn_str"
-            style="@style/CorneredButton"/>
+            android:paddingVertical="10dp"
+            android:text="@string/register_btn_str" />
     </LinearLayout>
 
 </FrameLayout>
