@@ -91,9 +91,4 @@ class ConfirmEmail4PasswordReset : AppCompatActivity() {
         val intent = Intent(this, ResetPassword::class.java)
         startActivity(intent)
     }
-
-    override fun onBackPressed() {
-        //todo open Authorization activity
-        super.onBackPressed()
-    }
 }
