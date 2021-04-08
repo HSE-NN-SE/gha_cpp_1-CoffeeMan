@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/app_bg"
     tools:context=".ui.entrance.Register">
 
     <LinearLayout
@@ -22,51 +22,70 @@
             android:text="@string/registration_title" />
 
         <FrameLayout
-            style="@style/InputField.FrameLayout"
+            style="@style/InputField.FrameLayout.Background"
             android:layout_marginBottom="19dp">
+            <FrameLayout
+                android:id="@+id/stroke_user_name"
+                style="@style/InputField.FrameLayout.Stroke">
 
-            <EditText
-                android:id="@+id/edit_text_user_name"
-                style="@style/InputField"
-                android:autofillHints="username"
-                android:hint="@string/user_name_hint"
-                android:inputType="textEmailAddress" />
+                <EditText
+                    android:id="@+id/edit_text_user_name"
+                    style="@style/InputField"
+                    android:autofillHints="username"
+                    android:hint="@string/user_name_hint"
+                    android:inputType="textEmailAddress"
+                    android:imeOptions="actionNext"/>
+            </FrameLayout>
         </FrameLayout>
 
         <FrameLayout
-            style="@style/InputField.FrameLayout"
+            style="@style/InputField.FrameLayout.Background"
             android:layout_marginBottom="19dp">
+            <FrameLayout
+                android:id="@+id/stroke_email"
+                style="@style/InputField.FrameLayout.Stroke">
 
-            <EditText
-                android:id="@+id/edit_text_email"
-                style="@style/InputField"
-                android:autofillHints="email"
-                android:hint="@string/email_hint"
-                android:inputType="textEmailAddress" />
+                <EditText
+                    android:id="@+id/edit_text_email"
+                    style="@style/InputField"
+                    android:autofillHints="email"
+                    android:hint="@string/email_hint"
+                    android:inputType="textEmailAddress"
+                    android:imeOptions="actionNext" />
+            </FrameLayout>
         </FrameLayout>
 
         <FrameLayout
-            style="@style/InputField.FrameLayout"
+            style="@style/InputField.FrameLayout.Background"
             android:layout_marginBottom="19dp">
+            <FrameLayout
+                android:id="@+id/stroke_password"
+                style="@style/InputField.FrameLayout.Stroke">
 
-            <EditText
-                android:id="@+id/edit_text_password"
-                style="@style/InputField"
-                android:autofillHints="password"
-                android:hint="@string/password_hint"
-                android:inputType="textPassword" />
+                <EditText
+                    android:id="@+id/edit_text_password"
+                    style="@style/InputField"
+                    android:autofillHints="password"
+                    android:hint="@string/password_hint"
+                    android:inputType="textPassword"
+                    android:imeOptions="actionNext" />
+            </FrameLayout>
         </FrameLayout>
 
         <FrameLayout
-            style="@style/InputField.FrameLayout"
+            style="@style/InputField.FrameLayout.Background"
             android:layout_marginBottom="19dp">
+            <FrameLayout
+                android:id="@+id/stroke_confirm_password"
+                style="@style/InputField.FrameLayout.Stroke">
 
-            <EditText
-                android:id="@+id/edit_text_confirm_password"
-                style="@style/InputField"
-                android:autofillHints="password"
-                android:hint="@string/confirm_password_hint"
-                android:inputType="textPassword" />
+                <EditText
+                    android:id="@+id/edit_text_confirm_password"
+                    style="@style/InputField"
+                    android:autofillHints="password"
+                    android:hint="@string/confirm_password_hint"
+                    android:inputType="textPassword" />
+            </FrameLayout>
         </FrameLayout>
 
         <LinearLayout
@@ -80,7 +99,7 @@
                 style="@style/CorneredButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp"
                 android:layout_weight="1"
                 android:text="@string/register_btn_str" />
 
@@ -89,7 +108,7 @@
                 style="@style/CorneredButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:text="@string/sing_in_btn_str" />
         </LinearLayout>

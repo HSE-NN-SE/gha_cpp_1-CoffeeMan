@@ -3,9 +3,13 @@ package com.yourvision.ui.entrance
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import android.view.WindowManager
 import android.widget.Button
+import android.widget.EditText
+import android.widget.FrameLayout
 import com.yourvision.R
 import com.yourvision.databinding.ActivityConfirmEmailBinding
 import com.yourvision.ui.utilities.ScaleAnimator
@@ -30,7 +34,7 @@ class ConfirmEmail : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
 
-        buttonInit()
+        initialization()
     }
 
     override fun onPause() {
@@ -39,29 +43,62 @@ class ConfirmEmail : AppCompatActivity() {
         timer.stop()
     }
 
-    private fun buttonInit() {
+    private fun initialization() {
         binding.sendBtn.setOnClickListener(this::onSendCodeClick)
         binding.confirmBtn.setOnClickListener(this::onConfirmClick)
+
+        setEditTextListeners()
+    }
+
+    private fun setEditTextListeners() {
+        setEditTextListener(binding.editTextEmail, binding.strokeEmail)
+        setEditTextListener(binding.editTextCode, binding.strokeCode)
+    }
+
+    private fun setEditTextListener(editText: EditText, stroke: FrameLayout) {
+        editText.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                stroke.setBackgroundResource(R.drawable.stroke_input_field)
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+            }
+        })
+    }
+
+    private fun isEmpty(editText: EditText, stroke: FrameLayout) : Boolean {
+        if (editText.text.isEmpty()) {
+            stroke.setBackgroundResource(R.drawable.stroke_input_field_error)
+            return true
+        }
+        return false
     }
 
     private fun onSendCodeClick(view: View) {
-        if (!isResend) {
-            //TODO Check fields and send code
+        if (!isEmpty(binding.editTextEmail, binding.strokeEmail)) {
+            if (!isResend) {
+                //TODO Check fields and send code
 
-            if (view is Button) {
-                startTimer(view)
+                if (view is Button) {
+                    startTimer(view)
+                }
+                isResend = true
+            } else {
+                //TODO Resend code
             }
-            isResend = true
-        } else {
-            //TODO Resend code
         }
     }
 
     private fun onConfirmClick(view: View) {
-        //TODO Check fields and open Reset Password activity
-        timer.stop()
-        val intent = Intent(this, ResetPassword::class.java)
-        startActivity(intent)
+        if (!isEmpty(binding.editTextCode, binding.strokeCode)) {
+            //TODO Check fields and open Reset Password activity
+            timer.stop()
+            val intent = Intent(this, ResetPassword::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun startTimer(button: Button) {
