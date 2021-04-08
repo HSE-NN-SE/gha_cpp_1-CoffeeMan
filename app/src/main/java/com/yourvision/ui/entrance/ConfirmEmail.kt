@@ -6,29 +6,18 @@ import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
 import android.widget.Button
-import android.widget.EditText
 import com.yourvision.R
+import com.yourvision.databinding.ActivityConfirmEmailBinding
 import com.yourvision.ui.utilities.ScaleAnimator
 import com.yourvision.ui.utilities.ViewTimer
 
-class ConfirmEmail4PasswordReset : AppCompatActivity() {
+class ConfirmEmail : AppCompatActivity() {
     private var isResend = false
-    private var isReset = false
     private val timer = ViewTimer()
     private val animator = ScaleAnimator()
 
-    private val emailField by lazy {
-        findViewById<EditText>(R.id.edit_text_email)
-    }
-    private val codeField by lazy {
-        findViewById<EditText>(R.id.edit_text_code)
-    }
-
-    private val sendBtn by lazy {
-        findViewById<Button>(R.id.send_btn)
-    }
-    private val confirmBtn by lazy {
-        findViewById<Button>(R.id.confirm_btn);
+    private val binding: ActivityConfirmEmailBinding by lazy {
+        ActivityConfirmEmailBinding.inflate(layoutInflater)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +26,8 @@ class ConfirmEmail4PasswordReset : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
-        setContentView(R.layout.activity_confirm_email)
+
+        setContentView(binding.root)
         supportActionBar?.hide()
 
         buttonInit()
@@ -50,35 +40,17 @@ class ConfirmEmail4PasswordReset : AppCompatActivity() {
     }
 
     private fun buttonInit() {
-        sendBtn.setOnClickListener(this::onSendCodeClick)
-        confirmBtn.setOnClickListener(this::onConfirmClick)
+        binding.sendBtn.setOnClickListener(this::onSendCodeClick)
+        binding.confirmBtn.setOnClickListener(this::onConfirmClick)
     }
 
     private fun onSendCodeClick(view: View) {
         if (!isResend) {
             //TODO Check fields and send code
 
-            val button = (view as? Button)
-            button?.isClickable = false
-
-            confirmBtn.visibility = Button.VISIBLE
-            confirmBtn.isClickable = false
-
-            animator.initAndStart(
-                confirmBtn,
-                button?.width ?: 0,
-                button?.height ?: 0,
-                speed = 0.15,
-                delay = 100
-            ) {
-                confirmBtn.setText(R.string.confirm_btn_str)
-                confirmBtn.isClickable = true
-                timer.initAndStart(15, button) {
-                    button?.setText(R.string.resend_btn_str)
-                    button?.isClickable = true
-                }
+            if (view is Button) {
+                startTimer(view)
             }
-
             isResend = true
         } else {
             //TODO Resend code
@@ -90,5 +62,27 @@ class ConfirmEmail4PasswordReset : AppCompatActivity() {
         timer.stop()
         val intent = Intent(this, ResetPassword::class.java)
         startActivity(intent)
+    }
+
+    private fun startTimer(button: Button) {
+        button.isClickable = false
+
+        binding.confirmBtn.visibility = Button.VISIBLE
+        binding.confirmBtn.isClickable = false
+
+        animator.initAndStart(
+            binding.confirmBtn,
+            button.width,
+            button.height,
+            speed = 0.17,
+            delay = 100
+        ) {
+            timer.initAndStart(15, button) {
+                button.setText(R.string.resend_btn_str)
+                button.isClickable = true
+            }
+            binding.confirmBtn.setText(R.string.confirm_btn_str)
+            binding.confirmBtn.isClickable = true
+        }
     }
 }

@@ -13,14 +13,13 @@
             android:name=".ui.entrance.ResetPassword"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.entrance.ConfirmEmail4PasswordReset"
+            android:name=".ui.entrance.ConfirmEmail"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.entrance.Register"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.entrance.Authorization"
-            android:launchMode="singleTop"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

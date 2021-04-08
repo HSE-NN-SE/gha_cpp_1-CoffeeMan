@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.entrance.ConfirmEmail4PasswordReset">
+    tools:context=".ui.entrance.ConfirmEmail">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -67,7 +67,7 @@
                 android:layout_height="match_parent"
                 android:clickable="false"
                 android:text=""
-                android:visibility="invisible" />
+                android:visibility="gone" />
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>

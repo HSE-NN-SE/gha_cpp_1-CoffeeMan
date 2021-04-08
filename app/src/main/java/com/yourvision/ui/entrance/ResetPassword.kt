@@ -5,21 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
-import android.widget.Button
-import android.widget.EditText
-import com.yourvision.R
+import com.yourvision.databinding.ActivityResetPasswordBinding
 
 class ResetPassword : AppCompatActivity() {
-    private val passwordField: EditText by lazy {
-        findViewById<EditText>(R.id.edit_text_password)
-    }
 
-    private val confirmField: EditText by lazy {
-        findViewById<EditText>(R.id.edit_text_confirm_password)
-    }
-
-    private val confirmBtn: Button by lazy {
-        findViewById<Button>(R.id.confirm_btn)
+    private val binding: ActivityResetPasswordBinding by lazy {
+        ActivityResetPasswordBinding.inflate(layoutInflater)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,10 +19,10 @@ class ResetPassword : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
-        setContentView(R.layout.activity_reset_password)
+        setContentView(binding.root)
         supportActionBar?.hide()
 
-        confirmBtn.setOnClickListener(this::onConfirmBtnClick)
+        binding.confirmBtn.setOnClickListener(this::onConfirmBtnClick)
     }
 
     private fun onConfirmBtnClick(view: View) {
