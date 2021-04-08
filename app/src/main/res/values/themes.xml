@@ -12,10 +12,8 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-        <item name="android:background">@color/appBackground</item>
 
-        <item name="reset_pwd_text">@color/reset_pwd_text</item>
-        <item name="reset_pwd_bg">@color/reset_pwd_bg</item>
+        <item name="app_bg">@drawable/gradient_bg</item>
 
         <item name="input_field_bg">@color/input_field_bg</item>
         <item name="input_field_stroke">@color/input_field_stroke</item>

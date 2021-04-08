@@ -3,40 +3,20 @@ package com.yourvision.ui.entrance
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import android.view.WindowManager
-import android.widget.Button
 import android.widget.EditText
+import android.widget.FrameLayout
 import com.yourvision.R
+import com.yourvision.databinding.ActivityAuthorizationBinding
 
 class Authorization : AppCompatActivity() {
 
-    private val registerBtn: Button by lazy {
-        findViewById<Button>(R.id.register_btn)
+    private val binding: ActivityAuthorizationBinding by lazy {
+        ActivityAuthorizationBinding.inflate(layoutInflater)
     }
-    private val logInBtn: Button by lazy {
-        findViewById<Button>(R.id.log_in_btn)
-    }
-    private val resetPasswordBtn: Button by lazy {
-        findViewById<Button>(R.id.reset_btn)
-    }
-    private val googleAuthorizationBtn: Button by lazy {
-        findViewById<Button>(R.id.google_authorization_btn)
-    }
-    private val vkAuthorizationBtn: Button by lazy {
-        findViewById<Button>(R.id.vk_authorization_btn)
-    }
-    private val instAuthorizationBtn: Button by lazy {
-        findViewById<Button>(R.id.inst_authorization_btn)
-    }
-
-    private val userNameField: EditText by lazy {
-        findViewById<EditText>(R.id.edit_text_user_name)
-    }
-    private val passwordField: EditText by lazy {
-        findViewById<EditText>(R.id.edit_text_password)
-    }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,33 +25,64 @@ class Authorization : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
 
-        setContentView(R.layout.activity_authorization)
+        setContentView(binding.root)
 
         supportActionBar?.hide()
 
-        buttonsInit()
+        initialization()
     }
 
-    private fun buttonsInit() {
-        registerBtn.setOnClickListener(this::onRegisterClick)
+    private fun initialization() {
+        binding.registerBtn.setOnClickListener(this::onRegisterClick)
+        binding.logInBtn.setOnClickListener(this::onLogInClick)
+        binding.resetBtn.setOnClickListener(this::onResetPasswordClick)
+        binding.googleAuthorizationBtn.setOnClickListener(this::onGoogleAuthorizationClick)
+        binding.vkAuthorizationBtn.setOnClickListener(this::onVKAuthorizationClick)
+        binding.instAuthorizationBtn.setOnClickListener(this::onInstAuthorizationClick)
 
-        logInBtn.setOnClickListener(this::onLogInClick)
+        setEditTextListeners()
+    }
 
-        resetPasswordBtn.setOnClickListener(this::onResetPasswordClick)
+    private fun setEditTextListeners() {
+        setEditTextListener(binding.editTextUserName, binding.strokeUserName)
+        setEditTextListener(binding.editTextPassword, binding.strokePassword)
+    }
 
-        googleAuthorizationBtn.setOnClickListener(this::onGoogleAuthorizationClick)
+    private fun emptyFieldsCheck() : Boolean {
+        return isEmpty(binding.editTextUserName, binding.strokeUserName) or
+                isEmpty(binding.editTextPassword, binding.strokePassword)
+    }
 
-        vkAuthorizationBtn.setOnClickListener(this::onVKAuthorizationClick)
+    private fun setEditTextListener(editText: EditText, stroke: FrameLayout) {
+        editText.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                stroke.setBackgroundResource(R.drawable.stroke_input_field)
+            }
 
-        instAuthorizationBtn.setOnClickListener(this::onInstAuthorizationClick)
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+            }
+        })
+    }
+
+    private fun isEmpty(editText: EditText, stroke: FrameLayout) : Boolean {
+        if (editText.text.isEmpty()) {
+            stroke.setBackgroundResource(R.drawable.stroke_input_field_error)
+            return true
+        }
+        return false
     }
 
     private fun onLogInClick(view: View) {
-        //TODO("Check fields and open intro or main activity")
+        if (!emptyFieldsCheck()) {
+            //TODO("Check fields and open intro or main activity")
+        }
     }
 
     private fun onResetPasswordClick(view: View) {
-        val intent = Intent(this, ConfirmEmail4PasswordReset::class.java)
+        val intent = Intent(this, ConfirmEmail::class.java)
         startActivity(intent)
     }
 

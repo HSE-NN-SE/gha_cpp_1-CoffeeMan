@@ -13,7 +13,7 @@
             android:name=".ui.entrance.ResetPassword"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.entrance.ConfirmEmail4PasswordReset"
+            android:name=".ui.entrance.ConfirmEmail"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.entrance.Register"
