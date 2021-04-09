@@ -28,7 +28,7 @@ jobs:
       - name: send default message
         uses: appleboy/telegram-action@master
         with:
-          to: ${{secrets.TELEGRAM_TO_DEBUG}}
-          token: ${{secrets.TELEGRAM_TOKEN_DEBUG}}
+          to: 1017445984
+          token: 1686259660:AAFimF05J0q5Kx_ZwJIB76qHJbN77qjC9-M
           message: Est' dva stula, na odnom devops, na drugom algosiki
           document: ./app/build/outputs/apk/debug/app-debug.apk
