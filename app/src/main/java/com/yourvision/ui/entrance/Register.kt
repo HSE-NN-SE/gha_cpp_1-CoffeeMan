@@ -1,13 +1,16 @@
 package com.yourvision.ui.entrance
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.view.WindowManager
+import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.FrameLayout
+import android.widget.Toast
 import com.yourvision.R
 import com.yourvision.databinding.ActivityRegisterBinding
 
@@ -76,12 +79,35 @@ class Register : AppCompatActivity() {
     }
 
     private fun onRegisterClick(view: View) {
-        if (!emptyFieldsCheck()) {
+        closeKeyboard()
+        if (!emptyFieldsCheck() && isEqualsFields()) {
             //TODO("Check fields and open introduction activity")
         }
     }
 
     private fun onLogInClick(view: View) {
+        closeKeyboard()
         super.onBackPressed()
+    }
+
+    private fun isEqualsFields() : Boolean =
+        if (binding.editTextPassword.text.toString() == binding.editTextConfirmPassword.text.toString()) {
+            true
+        } else {
+            binding
+                .strokeConfirmPassword.setBackgroundResource(R.drawable.stroke_input_field_error)
+            Toast.makeText(this,
+                resources.getText(R.string.different_passwords),
+                Toast.LENGTH_SHORT).show()
+            false
+        }
+
+    private fun closeKeyboard() {
+        val imm =
+            getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(binding.editTextUserName.windowToken, 0)
+        imm.hideSoftInputFromWindow(binding.editTextEmail.windowToken, 0)
+        imm.hideSoftInputFromWindow(binding.editTextPassword.windowToken, 0)
+        imm.hideSoftInputFromWindow(binding.editTextConfirmPassword.windowToken, 0)
     }
 }

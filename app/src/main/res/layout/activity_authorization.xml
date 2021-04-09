@@ -37,6 +37,7 @@
                     android:autofillHints="email"
                     android:hint="@string/user_name_hint"
                     android:inputType="textEmailAddress"
+                    android:nextFocusForward="@id/edit_text_password"
                     android:imeOptions="actionNext"/>
             </FrameLayout>
         </FrameLayout>

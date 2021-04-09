@@ -1,5 +1,6 @@
 package com.yourvision.ui.entrance
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,8 +8,10 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.view.WindowManager
+import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.FrameLayout
+import android.widget.Toast
 import com.yourvision.R
 import com.yourvision.databinding.ActivityResetPasswordBinding
 
@@ -67,8 +70,21 @@ class ResetPassword : AppCompatActivity() {
         return false
     }
 
+    private fun isEqualsFields() : Boolean =
+        if (binding.editTextPassword.text.toString() == binding.editTextConfirmPassword.text.toString()) {
+            true
+        } else {
+            binding
+                .strokeConfirmPassword.setBackgroundResource(R.drawable.stroke_input_field_error)
+            Toast.makeText(this,
+                resources.getText(R.string.different_passwords),
+                Toast.LENGTH_SHORT).show()
+            false
+        }
+
     private fun onConfirmBtnClick(view: View) {
-        if(!emptyFieldsCheck()) {
+        closeKeyboard()
+        if(!emptyFieldsCheck() && isEqualsFields()) {
             //TODO check fields and open Authorization activity
             val intent = Intent(this, Authorization::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
@@ -76,7 +92,15 @@ class ResetPassword : AppCompatActivity() {
         }
     }
 
+    private fun closeKeyboard() {
+        val imm =
+            getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(binding.editTextPassword.windowToken, 0)
+        imm.hideSoftInputFromWindow(binding.editTextConfirmPassword.windowToken, 0)
+    }
+
     override fun onBackPressed() {
+        closeKeyboard()
         val intent = Intent(this, Authorization::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
         startActivity(intent)

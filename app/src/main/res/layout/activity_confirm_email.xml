@@ -34,7 +34,7 @@
                     android:autofillHints="email"
                     android:hint="@string/email_hint"
                     android:inputType="textEmailAddress"
-                    android:imeOptions="actionNext"/>
+                    android:imeOptions="actionDone"/>
             </FrameLayout>
         </FrameLayout>
 
