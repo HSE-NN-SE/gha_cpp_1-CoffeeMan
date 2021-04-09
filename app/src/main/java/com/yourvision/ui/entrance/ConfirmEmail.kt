@@ -1,5 +1,6 @@
 package com.yourvision.ui.entrance
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +8,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.view.WindowManager
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.FrameLayout
@@ -78,6 +80,7 @@ class ConfirmEmail : AppCompatActivity() {
     }
 
     private fun onSendCodeClick(view: View) {
+        closeKeyboard()
         if (!isEmpty(binding.editTextEmail, binding.strokeEmail)) {
             if (!isResend) {
                 //TODO Check fields and send code
@@ -92,7 +95,15 @@ class ConfirmEmail : AppCompatActivity() {
         }
     }
 
+    private fun closeKeyboard() {
+        val imm =
+            getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(binding.editTextCode.windowToken, 0)
+        imm.hideSoftInputFromWindow(binding.editTextEmail.windowToken, 0)
+    }
+
     private fun onConfirmClick(view: View) {
+        closeKeyboard()
         if (!isEmpty(binding.editTextCode, binding.strokeCode)) {
             //TODO Check fields and open Reset Password activity
             timer.stop()

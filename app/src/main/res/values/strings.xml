@@ -15,4 +15,5 @@
     <string name="resend_btn_str">Resend code</string>
     <string name="confirm_btn_str">Confirm</string>
     <string name="or">or</string>
+    <string name="different_passwords">Passwords are different</string>
 </resources>

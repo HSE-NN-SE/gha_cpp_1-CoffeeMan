@@ -1,14 +1,16 @@
 package com.yourvision.ui.entrance
 
+import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.view.WindowManager
+import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.FrameLayout
+import androidx.appcompat.app.AppCompatActivity
 import com.yourvision.R
 import com.yourvision.databinding.ActivityAuthorizationBinding
 
@@ -54,7 +56,7 @@ class Authorization : AppCompatActivity() {
     }
 
     private fun setEditTextListener(editText: EditText, stroke: FrameLayout) {
-        editText.addTextChangedListener(object: TextWatcher {
+        editText.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
                 stroke.setBackgroundResource(R.drawable.stroke_input_field)
             }
@@ -76,30 +78,43 @@ class Authorization : AppCompatActivity() {
     }
 
     private fun onLogInClick(view: View) {
+        closeKeyboard()
         if (!emptyFieldsCheck()) {
             //TODO("Check fields and open intro or main activity")
         }
     }
 
     private fun onResetPasswordClick(view: View) {
+        closeKeyboard()
         val intent = Intent(this, ConfirmEmail::class.java)
         startActivity(intent)
     }
 
     private fun onRegisterClick(view: View) {
+        closeKeyboard()
         val intent = Intent(this, Register::class.java)
         startActivity(intent)
     }
 
+    private fun closeKeyboard() {
+        val imm =
+            getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(binding.editTextUserName.windowToken, 0)
+        imm.hideSoftInputFromWindow(binding.editTextPassword.windowToken, 0)
+    }
+
     private fun onGoogleAuthorizationClick(view: View) {
+        closeKeyboard()
         //TODO("Open authorization fragment")
     }
 
     private fun onVKAuthorizationClick(view: View) {
+        closeKeyboard()
         //TODO("Open authorization fragment")
     }
 
     private fun onInstAuthorizationClick(view: View) {
+        closeKeyboard()
         //TODO("Open authorization fragment")
     }
 }
